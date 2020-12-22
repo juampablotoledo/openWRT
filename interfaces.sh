@@ -11,7 +11,7 @@ then
 		WAN=`mwan3 interfaces | grep ' wan '`
 		WAN2=`mwan3 interfaces | grep ' wan2 '`
 
-		if [[ ( $WAN != *"online"* ) && ( $WAN2 != *"online"* || $WAN2 != *"offline"* ) ]]
+		if [[ ( $WAN != *"online"* ) && ( $WAN2 != *"online"* && $WAN2 != *"offline"* ) ]]
 		then
 			RESULTADO[$INTENTO]=0
 		else
