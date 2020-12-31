@@ -10,6 +10,7 @@ else
 
 	if [[ $LECTURA == *"ath9k ar934x_wmac: failed to initialize device"* ]]
 	then
+		date >> /root/fallo.txt
 		uptime >> /root/fallo.txt
 		reboot
 		rm $EVIDENCIA
