@@ -25,6 +25,8 @@ then
 	if [[ ${RESULTADO[0]} == 0 && ${RESULTADO[0]} == ${RESULTADO[1]} && ${RESULTADO[0]} == ${RESULTADO[2]} && ${RESULTADO[0]} == ${RESULTADO[3]} && ${RESULTADO[0]} == ${RESULTADO[4]} && ${RESULTADO[0]} == ${RESULTADO[5]} && ${RESULTADO[0]} == ${RESULTADO[6]} && ${RESULTADO[0]} == ${RESULTADO[7]} && ${RESULTADO[0]} == ${RESULTADO[8]} ]]
 	then
 		echo `date` >> /root/proceso.txt
+		top -b -n1 | head -n20 >> /root/proceso.txt
+		rb
 	else
 		echo "¡Todo bien!"
 	fi
