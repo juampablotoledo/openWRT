@@ -18,7 +18,7 @@ else
 fi
 
 INTERFACES=/root/scripts/.MWAN3
-LOG=/root/scripts/interfaces.log
+LOG=/root/scripts/LOG
 
 if [[ $TIEMPO -gt 1800 ]]
 then
@@ -45,8 +45,9 @@ then
 
 	if [[ ${RESULTADO[0]} == 0 && ${RESULTADO[0]} == ${RESULTADO[1]} && ${RESULTADO[0]} == ${RESULTADO[2]} ]]
 	then
+		echo "######### Interfaces #########" >> $LOG
 		date >> $LOG
-		echo `uptime` >> $LOG
+		uptime >> $LOG
 		echo `cat $INTERFACES | awk '{print $6 " " $14}'` >> $LOG
 		rm $INTERFACES
 		rb
